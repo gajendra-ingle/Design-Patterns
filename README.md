@@ -188,7 +188,9 @@ class EmailClient implements Observer {
 class NotificationService {
     private final List<Observer> observers = new ArrayList<>();
 
-    public void addObserver(Observer o) { observers.add(o); }
+    public void addObserver(Observer o) {
+        observers.add(o);
+    }
 
     public void notifyObservers(String msg) {
         for (Observer o : observers) o.update(msg);
@@ -242,7 +244,9 @@ interface Command {
 }
 
 class Light {
-    void turnOn() { System.out.println("Light ON"); }
+    void turnOn() {
+       System.out.println("Light ON");
+    }
 }
 
 class TurnOnCommand implements Command {
